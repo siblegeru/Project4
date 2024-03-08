@@ -10,7 +10,7 @@ public class BaseConstractTest {
     protected WebDriver driver;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://qa-scooter.praktikum-services.ru/");
@@ -29,7 +29,6 @@ public class BaseConstractTest {
     public void closeBrowser() {
         driver.quit();
     }
-    
 
 
 }

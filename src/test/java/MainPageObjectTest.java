@@ -6,9 +6,8 @@ import ru.scooter.PageObject.MainPageObject;
 import static org.junit.Assert.assertEquals;
 
 
-
 @RunWith(Parameterized.class)
-public class MainPageObjectTest extends BaseConstractTest{
+public class MainPageObjectTest extends BaseConstractTest {
     private final int numberQuestions;
     private final boolean expected;
     private final int numberTextQuestions;
@@ -21,17 +20,20 @@ public class MainPageObjectTest extends BaseConstractTest{
 
     @Parameterized.Parameters
     public static Object[][] getNumberListFAQ() {
-        return new Object[][] {
+        return new Object[][]{
                 {1, 1, true},
-                {6, 6, true},
+                {2, 2, true},
                 {3, 3, true},
-                {5, 6, false},
-                {7, 3, false},
+                {4, 4, true},
+                {5, 5, true},
+                {6, 6, true},
+                {7, 7, true},
+                {8, 8, true},
         };
     }
 
     @Test
-    public void CheckButtonOrderDo(){
+    public void CheckButtonOrderDo() {
         MainPageObject checkOrderButton = new MainPageObject(driver);
         checkOrderButton.scrollForFAQ();
         checkOrderButton.clickingOnQuestions(numberQuestions);
